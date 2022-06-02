@@ -1,0 +1,14 @@
+Data enrichment: 
+	* identifying origin by last name for  defendants and lawyers
+	* ranking cases by female judge count and female defendants and lawyers
+	* identifying origin of judges
+	* optional: ranking cases by ruling length, amount of topics, and amount of judges
+
+Processing:
+	* check correlation between judge exp and overuling previous vertics
+	* mapping judges to cases - If affected by: seniority, origin, gender
+	* Calculating life duration of cases
+	* calcualting life duration to amount of cases ratio
+	
+	
+Processing after data enrichment:
