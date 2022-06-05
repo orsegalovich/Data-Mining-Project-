@@ -35,4 +35,4 @@ for i,url in enumerate(case_id_list):
 
 
 
-df.to_csv('LawDbWithSeniorityAndVerdictCount.csv', encoding="utf-8-sig", index=False)
+df.to_csv('LawDbWithSeniorityAndVerdictCountAndDuration.csv', encoding="utf-8-sig", index=False)
