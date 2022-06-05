@@ -51,6 +51,7 @@ Present to Dafna:
 		* a computation of how many mutual cases each pair of judges worked on
 		* a basic graph calculating it
 		* we want:
+			* calculate graph according to total amount of cases that the pair have appeared
 			* to calculate cliques on the graph
 			* to calculate graph and cliques by specific topics
 			* to calculate graph and cliques by trios
