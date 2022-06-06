@@ -57,6 +57,15 @@ Present to Dafna:
 			* to calculate graph and cliques by trios
 	
 	
+Meeting with DafiDaf - summary:
+
+Graph - The way to normalize the edges in the graph is to calculate the E of how many times two judges should aprear if it was random in comparison to the 	   empirical findings. Then to remove all the "thin" edges (remove the noise, some part of sd from the center) and to diagnose by that the connections.
+
+Decision tree - The idea at the begining to predict categorical value of cases doesn't fit a good size to predict, therefore a good idea is to predict the cases that would be in minority opinion, or to predict % of 'Sachevet'.
+
+All the rest was a lot of well done, I am satisfied with your direction etc. 
+
+AMIR! read it. 
 	
 	
 	
