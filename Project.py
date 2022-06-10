@@ -21,13 +21,17 @@ def get_seniority_affect_of_overruling():
                 sum_avg_seniority_overruled += float(df["avg_seniority"][i])
     return sum_avg_seniority_overruled/count_overruled
 
+avges = [get_seniority_affect_of_overruling(), df["avg_seniority"].mean(), df.where(df['legalProcedure'] != "High Court of Justice")["avg_seniority"].mean()]
+names = ["Appeal cases overruled", "All cases", "All appeal cases"]
 
-print("Average seniority of judges in appeal cases overruled: " , get_seniority_affect_of_overruling())
-print("Average seniority of judges in all cases: " , df["avg_seniority"].mean())
-print("Average seniority of judges in Appeal cases: " , df.where(df['legalProcedure'] != "High Court of Justice")["avg_seniority"].mean())
+print("Average seniority of judges in appeal cases overruled: " , avges[0])
+print("Average seniority of judges in all cases: " , avges[1])
+print("Average seniority of judges in Appeal cases: " , avges[2])
 
-
-
+def get_dist_plot(x,y):
+    plt.bar(x,y)
+    plt.ylim(top=8)
+    plt.show()
 
 
 
