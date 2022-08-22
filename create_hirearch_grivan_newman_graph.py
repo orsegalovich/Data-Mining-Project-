@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.cluster import hierarchy
 from scipy.spatial import distance
 import numpy
+import math
 
 
 df = pd.read_csv('PairOfJudgesAndMutualCaseCount.csv', low_memory=False, na_filter=False)
@@ -15,9 +16,12 @@ G.clear()
 G.add_edges_from(edges)
 
 path_length=dict(nx.all_pairs_shortest_path_length(G))
-
+print(path_length)
 n = len(G.nodes())
 distances=numpy.zeros((n,n))
+for i in range(n):
+    for j in range(n):
+        distances[i][j] = 50
 labels_lst = list()
 def calc_distances_of_graph():
     judge_a_counter = 0
@@ -35,16 +39,17 @@ def calc_distances_of_graph():
             judge_b_counter +=1
         judge_a_counter+=1
 calc_distances_of_graph()
+print(distances)
 sd = distance.squareform(distances)
 
 hier = hierarchy.average(sd)
 
-for  i, word in enumerate(labels_lst):
+for i, word in enumerate(labels_lst):
     f_let = word.split()[0][0]
     s_let = word.split()[1][0]
     labels_lst[i] = f_let+s_let
 
 
 hierarchy.dendrogram(hier, labels=labels_lst, leaf_font_size=8)
-plt.savefig(r'.\graph_pictures\hierarchy_by_paths_distance\hierarchy_by_paths_distance_005_threshold')
+# plt.savefig(r'.\graph_pictures\hierarchy_by_paths_distance\hierarchy_by_paths_distance_005_threshold')
 plt.show()
