@@ -66,7 +66,7 @@ def plot_data_function(title, yaxis_title, file_name, label_size):
     plt.title(title, fontsize=16)
     # plt.xlabel("categories", fontsize=10)
     plt.ylabel(yaxis_title, fontsize=10)
-    plt.savefig(file_name)
+    plt.savefig(f"./sectors_visualization/{file_name}")
     plt.clf()
 
 
