@@ -4,9 +4,11 @@ import seaborn as sns
 from csv import writer
 from csv import reader
 
-df = pd.read_csv('LawDbWithSeniority1.csv', low_memory=False)
+df = pd.read_csv('iscd_cases_2018-12-05.csv', low_memory=False)
 df_NSG = pd.read_csv('NormalizedEnglish.csv', low_memory=False)
-INCUNCLUSIVE = 'Incunclusive'
+INCONCLUSIVE = 'Inconclusive'
+INCONCLUSIVE_G = "Inconclusive gender"
+INCONCLUSIVE_S = "Inconclusive sector"
 
 def dict_of_names():
     names_dict = dict()
@@ -16,10 +18,10 @@ def dict_of_names():
         if cur_name not in names_dict:
             names_dict[cur_name] = cur_sector
             continue
-        elif cur_sector == INCUNCLUSIVE:
+        elif cur_sector == INCONCLUSIVE_S:
             continue
         elif names_dict[cur_name] != cur_sector:
-            names_dict[cur_name] = INCUNCLUSIVE
+            names_dict[cur_name] = INCONCLUSIVE_S
     return names_dict
 
 
@@ -34,10 +36,10 @@ def dict_of_genders():
         if cur_name not in gender_dict:
             gender_dict[cur_name] = cur_gender
             continue
-        elif cur_gender == INCUNCLUSIVE:
+        elif cur_gender == INCONCLUSIVE_G:
             continue
         elif gender_dict[cur_name] != cur_gender:
-            gender_dict[cur_name] = INCUNCLUSIVE
+            gender_dict[cur_name] = INCONCLUSIVE_G
     return gender_dict
 
 
@@ -51,10 +53,15 @@ def get_lawyer_sector(col):
         sector = "Unknown"
         if type(df[col][i]) == str:
             name = df[col][i]
-            name = name.split()
-            name = name[-1]
+            full_name_lst = name.split()
+            name = full_name_lst[-1]
             if name in name_dict:
                 sector = name_dict[name]
+            if "פרקליטות" in full_name_lst:
+                sector = "Unregistered"
+        elif df[col][i] != df[col][i]:
+            sector = "Unregistered"
+
         sector_lst.append(sector)
     return sector_lst
 
@@ -66,10 +73,16 @@ def get_lawyer_gender(col):
         gender = "Unknown"
         if type(df[col][i]) == str:
             name = df[col][i]
-            name = name.split()
-            name = name[-1]
+            full_name_lst = name.split()
+            name = full_name_lst[-1]
+
             if name in gender_dict:
                 gender = gender_dict[name]
+            if "פרקליטות" in full_name_lst:
+                gender = "Unregistered"
+
+        elif df[col][i] != df[col][i]:
+            gender = "Unregistered"
         gender_lst.append(gender)
     return gender_lst
 
@@ -114,4 +127,4 @@ add_col_to_df(gender_R_lst1, "lawyerR1Gender")
 add_col_to_df(gender_R_lst2, "lawyerR2Gender")
 add_col_to_df(gender_R_lst3, "lawyerR3Gender")
 
-df.to_csv('layers_sector_gender.csv', encoding="utf-8-sig", index=False)
+df.to_csv('cases_with_sector.csv', encoding="utf-8-sig", index=False)

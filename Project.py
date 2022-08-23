@@ -19,6 +19,7 @@ def get_seniority_affect_of_overruling():
                 temp_case = case
                 count_overruled += 1
                 sum_avg_seniority_overruled += float(df["avg_seniority"][i])
+    get_dist_plot(sum_avg_seniority_overruled, count_overruled)
     return sum_avg_seniority_overruled/count_overruled
 
 avges = [get_seniority_affect_of_overruling(), df["avg_seniority"].mean(), df.where(df['legalProcedure'] != "High Court of Justice")["avg_seniority"].mean()]
