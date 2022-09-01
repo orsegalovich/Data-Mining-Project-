@@ -170,7 +170,7 @@ def plot_data_function(title, yaxis_title, file_name, dict, label_size):
     # plt.xlabel("categories", fontsize=10)
     plt.ylabel(yaxis_title, fontsize=12)
     plt.savefig(f"./sectors_visualization/{file_name}")
-    # plt.show()
+    #plt.show()
     plt.clf()
     plt.close()
 
@@ -183,7 +183,7 @@ def plot_pie(title, dict, file_name, flag=True):
             labels=dict.keys(),
             startangle=90, autopct='%.1f%%')
     plt.title(title)
-    # plt.show()
+    #plt.show()
     plt.savefig(f"./sectors_visualization/{file_name}")
     plt.clf()
     plt.close()
@@ -204,7 +204,6 @@ def create_noemalized_lst_of_total_case_results():
 
 
 def create_hisotgram_of_noramilzed_petitioner_case_results():
-
 
     # calc normalized arab lst
     arab_petitioner_lst = list(winning_teams_counter_by_sides['Arab_p'].values())
@@ -231,6 +230,7 @@ def create_hisotgram_of_noramilzed_petitioner_case_results():
 
     plt.title("Normalized case results of Jewish and Arab petitions with total db distribution", fontsize=11)
     plt.savefig("./sectors_visualization/normalized_case_results_of_jewish_and_arab_petition")
+    #plt.show()
     plt.clf()
     plt.close()
 
@@ -262,6 +262,7 @@ def create_hisotgram_of_noramilzed_respondent_case_results():
 
     plt.title("Normalized case results of Jewish and Arab respondent with total db distribution", fontsize=11)
     plt.savefig("./sectors_visualization/normalized_case_results_of_jewish_and_arab_respondents")
+    #plt.show()
     plt.clf()
     plt.close()
 
@@ -301,7 +302,7 @@ def create_histogram_for_normalized_petition_and_respondent_for_jews_and_arabs()
 
     plt.title("Normalized petitions and respondents of Jewish, Arab and total  distribution", fontsize=11)
     plt.savefig("./sectors_visualization/normalized_petitions_and_respondents_of_jewish_and_Arab_and_total_and_distribution")
-    # plt.show()
+    #plt.show()
     plt.clf()
     plt.close()
 

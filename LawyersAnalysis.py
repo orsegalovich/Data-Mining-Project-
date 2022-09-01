@@ -69,3 +69,4 @@ def get_countplot(data, title, x_lab, y_lab):
 # Get the plot
 get_countplot(df_new, 'Lawyers divided by gender and sector', 'Division by background', 'Count')
 
+print(df_new[100:200])
