@@ -40,5 +40,6 @@ def get_plot_of_all_judges_and_avg_words_in_verdict():
     plt.show()
     return
 
+#Get plot of average words by verdict
 get_plot_of_all_judges_and_avg_words_in_verdict()
 

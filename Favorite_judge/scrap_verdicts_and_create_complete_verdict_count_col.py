@@ -11,7 +11,7 @@ from datetime import datetime
 
 import pandas as pd
 
-df = pd.read_csv('LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
+df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
 
 
 
@@ -22,8 +22,8 @@ for i,url in enumerate(url_list):
     # if i <= 3000:
     #     continue
     if i%1000==0:
-        df.to_csv('LawDbWithSeniorityAndVerdictCount.csv', encoding="utf-8-sig", index=False)
-        df = pd.read_csv('LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
+        df.to_csv('..\LawDbWithSeniorityAndVerdictCount.csv', encoding="utf-8-sig", index=False)
+        df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
 
     if url_list[i] in url_to_word_count_dict:
         df.loc[i, 'words_in_verdict'] = url_to_word_count_dict[url_list[i]]
@@ -42,4 +42,4 @@ for i,url in enumerate(url_list):
 
 
 
-df.to_csv('LawDbWithSeniorityAndVerdictCount.csv', encoding="utf-8-sig", index=False)
+df.to_csv('..\LawDbWithSeniorityAndVerdictCount.csv', encoding="utf-8-sig", index=False)

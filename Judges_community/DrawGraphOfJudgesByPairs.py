@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-df = pd.read_csv('PairOfJudgesAndMutualCaseCount.csv', low_memory=False, na_filter=False)
+df = pd.read_csv('..\PairOfJudgesAndMutualCaseCount.csv', low_memory=False, na_filter=False)
 G = nx.from_pandas_edgelist(df, source='judge_a', target='judge_b',
                             edge_attr='ratio')
 

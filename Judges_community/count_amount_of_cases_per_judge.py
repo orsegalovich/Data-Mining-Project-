@@ -1,7 +1,7 @@
 import pandas as pd
 
-df = pd.read_csv('LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False, na_filter=False)
-df2 = pd.read_csv('PairOfJudgesAndMutualCaseCount.csv', low_memory=False, na_filter=False)
+df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False, na_filter=False)
+df2 = pd.read_csv('..\PairOfJudgesAndMutualCaseCount.csv', low_memory=False, na_filter=False)
 
 
 # def get_judges_dict_with_vals_as_zero():
@@ -38,6 +38,6 @@ for row_ind in df2.index:
 
 # df2 = pd.read_csv('PairOfJudgesAndMutualCaseCount.csv', encoding="utf-8-sig", index=False)
 
-df2.to_csv('PairOfJudgesAndMutualCaseCount.csv', encoding="utf-8-sig", index=False)
+df2.to_csv('..\PairOfJudgesAndMutualCaseCount.csv', encoding="utf-8-sig", index=False)
 
 print(df2.head())

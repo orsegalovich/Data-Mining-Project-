@@ -3,8 +3,7 @@ from datetime import datetime
 
 
 date_format = "%m/%d/%Y"
-df = pd.read_csv('LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
-
+df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCount.csv', low_memory=False)
 
 
 case_id_list = df['ISCD_ID'].to_list()
@@ -35,4 +34,4 @@ for i,url in enumerate(case_id_list):
 
 
 
-df.to_csv('LawDbWithSeniorityAndVerdictCountAndDuration.csv', encoding="utf-8-sig", index=False)
+df.to_csv('..\LawDbWithSeniorityAndVerdictCountAndDuration.csv', encoding="utf-8-sig", index=False)

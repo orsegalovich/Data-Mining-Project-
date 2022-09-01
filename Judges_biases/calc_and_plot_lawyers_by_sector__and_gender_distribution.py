@@ -14,7 +14,7 @@ LAWYER = "lawyer"
 INCONCLUSIVE_G = "Inconclusive gender"
 INCONCLUSIVE_S = "Inconclusive sector"
 
-df = pd.read_csv('cases_with_sector.csv', low_memory=False)
+df = pd.read_csv('..\cases_with_sector.csv', low_memory=False)
 
 genders_and_sectors_counter ={"Unknown": 0, "Male": 0, "Jew": 0, "Arab": 0, INCONCLUSIVE_G: 0, INCONCLUSIVE_S: 0, "Female": 0}
 subgroups_dict_counter ={"Arab&Female": 0, "Arab&Male": 0, "Jew&Female": 0, "Jew&Male": 0}\

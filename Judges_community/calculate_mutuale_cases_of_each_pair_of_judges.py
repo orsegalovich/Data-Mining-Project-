@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('iscd_cases_2018-12-05.csv', low_memory=False, na_filter=False)
+df = pd.read_csv('..\iscd_cases_2018-12-05.csv', low_memory=False, na_filter=False)
 
 
 def get_judges_lst():
@@ -70,7 +70,7 @@ for row_ind in range(len(df.index)):
 
 
 j = judges_pair_df.sort_values(by=['appearances'], ascending=False)
-j.to_csv('PairOfJudgesAndMutualCaseCount.csv', encoding="utf-8-sig", index=False)
+j.to_csv('..\PairOfJudgesAndMutualCaseCount.csv', encoding="utf-8-sig", index=False)
 
 print(judges_pair_df)
 

@@ -24,7 +24,7 @@ PETITIONER = "Petitioner"
 WINS = "Wins"
 LOSSES = "Losses"
 TOTAL = "Total"
-df = pd.read_csv('cases_with_sector.csv', low_memory=False)
+df = pd.read_csv('..\cases_with_sector.csv', low_memory=False)
 
 
 teams_counter = {JEW: 0, "Arab": 0, "Mixed": 0, "Undecidable": 0}

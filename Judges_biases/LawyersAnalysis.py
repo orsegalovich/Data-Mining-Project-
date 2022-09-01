@@ -2,7 +2,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('layers_sector_gender.csv', low_memory=False)
+df = pd.read_csv('..\layers_sector_gender.csv', low_memory=False)
 
 cols_gender = ['lawyerP1Gender', 'lawyerP2Gender', 'lawyerP3Gender', 'lawyerR1Gender', 'lawyerR2Gender', 'lawyerR3Gender']
 cols_sector = ['lawyerP1Sector', 'lawyerP2Sector', 'lawyerP3Sector', 'lawyerR1Sector', 'lawyerR2Sector', 'lawyerR3Sector']
@@ -60,13 +60,11 @@ df_new = df_new[df_new['Sector'] != 2]
 # print(data_to_plot1.head())
 # print(data_to_plot2.head())
 
-
 def get_countplot(data, title, x_lab, y_lab):
     plot = sns.countplot(x="Sector", hue="Gender", data=data)
     plot.set(title = title, xlabel = x_lab , ylabel = y_lab)
-    plt.savefig('Lawyers_divided_by_gender_and_sector.png')
+    plt.savefig(f"./sectors_visualization/Lawyers_divided_by_gender_and_sector.png")
 
 # Get the plot
 get_countplot(df_new, 'Lawyers divided by gender and sector', 'Division by background', 'Count')
 
-print(df_new[100:200])

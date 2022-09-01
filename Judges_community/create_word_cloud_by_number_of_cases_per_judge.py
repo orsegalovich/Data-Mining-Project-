@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 # Read from db
-df = pd.read_csv('LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False, na_filter=False)
+df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False, na_filter=False)
 
 
 

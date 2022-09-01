@@ -4,8 +4,8 @@ import seaborn as sns
 from csv import writer
 from csv import reader
 
-df = pd.read_csv('iscd_cases_2018-12-05.csv', low_memory=False)
-df_NSG = pd.read_csv('NormalizedEnglish.csv', low_memory=False)
+df = pd.read_csv('..\iscd_cases_2018-12-05.csv', low_memory=False)
+df_NSG = pd.read_csv('..\EnglishNormalized.csv', low_memory=False)
 INCONCLUSIVE = 'Inconclusive'
 INCONCLUSIVE_G = "Inconclusive gender"
 INCONCLUSIVE_S = "Inconclusive sector"
@@ -127,4 +127,4 @@ add_col_to_df(gender_R_lst1, "lawyerR1Gender")
 add_col_to_df(gender_R_lst2, "lawyerR2Gender")
 add_col_to_df(gender_R_lst3, "lawyerR3Gender")
 
-df.to_csv('cases_with_sector.csv', encoding="utf-8-sig", index=False)
+df.to_csv('..\cases_with_sector.csv', encoding="utf-8-sig", index=False)

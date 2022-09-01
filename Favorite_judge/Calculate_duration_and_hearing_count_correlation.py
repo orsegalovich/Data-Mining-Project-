@@ -3,12 +3,10 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
 
-#Todo: Fix case count - remove all duplicates (since table has duplicates for each judge)
-#Todo: Edit a bit both heatmap and correlation and savefig
 
 
 
-df = pd.read_csv('LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False)
+df = pd.read_csv('..\LawDbWithSeniorityAndVerdictCountAndDuration.csv', low_memory=False)
 df['case_duration'] = pd.to_numeric(df['case_duration'],errors='coerce')
 df['numHearings'] = pd.to_numeric(df['numHearings'],errors='coerce')
 
